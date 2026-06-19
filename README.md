@@ -27,7 +27,7 @@ Projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları izleyin:
 
 1. Depoyu klonlayın veya zip dosyasını çıkarın:
    ```bash
-   git clone https://github.com/kullaniciadi/startupcmd.git
+   git clone https://github.com/Alttre/startupcmd.git
    cd startupcmd
    ```
 
