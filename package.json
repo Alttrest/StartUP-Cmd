@@ -2,6 +2,14 @@
   "name": "startup-cmd-explainer",
   "version": "1.0.0",
   "description": "Windows baslangicinda acilan CMD ve komutlari aciklayan uygulama",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alttrest/startupcmd.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alttrest/startupcmd/issues"
+  },
+  "homepage": "https://github.com/alttrest/startupcmd#readme",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
@@ -19,7 +27,7 @@
     "productName": "StartupCMD",
     "win": {
       "target": "portable",
-      "icon": "icon.ico"
+      "icon": "icon.png"
     },
     "files": [
       "main.js",

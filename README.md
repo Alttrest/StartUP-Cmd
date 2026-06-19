@@ -1,69 +1,69 @@
-# StartupCMD - Windows Başlangıç Komut Analizörü ve Yöneticisi
+# StartupCMD - Windows Startup Command Analyzer & Manager
 
-StartupCMD, Windows işletim sistemi başladığında otomatik olarak arka planda veya ön planda çalışan tüm komut satırı araçlarını, script dosyalarını ve uygulamaları tarayan, açıklayan ve yöneten Electron tabanlı profesyonel bir masaüstü uygulamasıdır. 
+StartupCMD is a professional, Electron-based desktop application for Windows that scans, explains, and manages command line tools, scripting files, and applications that launch automatically when your system starts up.
 
-Özellikle sistem açılışında kısa süreliğine veya kalıcı olarak açılan siyah komut istemi (CMD) pencerelerinin kaynağını tespit etmek, analiz etmek ve açılış hızını optimize etmek amacıyla tasarlanmıştır.
+It is specifically designed to diagnose and identify the source of command prompt (CMD) windows that flash or stay open briefly or permanently during Windows boot, allowing you to optimize your system startup speed and security.
 
-## 🚀 Özellikler
+## 🚀 Features
 
-- **Gelişmiş Başlangıç Taraması**: Kayıt Defteri (Registry Run/RunOnce), Kullanıcı ve Ortak Başlangıç Klasörleri ile Zamanlanmış Görevleri (Scheduled Tasks - Logon/Boot) tek tıkla tarar.
-- **CMD ve Script Tespiti**: Açılışta terminal penceresi (CMD/PowerShell) açılmasına yol açan girdileri otomatik tespit eder ve işaretler.
-- **Kod Analizörü (Script Reader)**: Tespit edilen `.bat`, `.cmd`, `.ps1` gibi betik dosyalarının kod içeriğini doğrudan uygulama içinde gösterir.
-- **Tehlike Analiz Raporu**: Betik kodlarını otomatik olarak tarayarak; dosya silme (`del`), kayıt defteri düzenleme (`reg`), internetten dosya indirme (`curl`/`wget`), sistemi kapatma (`shutdown`) gibi hassas sistem işlemlerini raporlar.
-- **Tek Tıkla Başlangıçtan Kaldırma**: İstenmeyen veya gereksiz başlangıç girdilerini ilgili kayıt yollarından veya zamanlanmış görevlerden güvenli bir şekilde siler/devre dışı bırakır.
-- **Dosya Konumunu Keşfetme**: Başlangıç girdisine ait dosya yolunu doğrudan Dosya Gezgini'nde açar.
-- **İnternette Arama**: Tanınmayan dosyalar hakkında bilgi edinmek için doğrudan Google üzerinde arama yapma kolaylığı sağlar.
-- **Premium Arayüz (Aesthetics)**: Modern glassmorphism efektleri, neon renk geçişleri, dinamik yükleme animasyonları ve sistem sağlık göstergesi içeren üst düzey karanlık tema.
+- **Comprehensive Startup Scanning**: Scans Registry Run/RunOnce keys (HKCU & HKLM), User & Common Startup folders, and Scheduled Tasks (specifically Logon/Boot triggers).
+- **CMD & Script Detection**: Highlights items executing via terminal shells (`cmd.exe`, `powershell.exe`, `.bat`, `.cmd`, `.ps1`, `.vbs`, `.js`) that cause console windows to popup.
+- **Direct Script Inspector**: Reads and displays the source code of `.bat`, `.cmd`, `.ps1` scripts directly within the application.
+- **Automated Security Analysis**: Scans script code for high-risk commands such as file deletions (`del`), registry edits (`reg`), file downloads (`curl`/`wget`), system shutdown commands (`shutdown`), process terminations (`taskkill`), and loops (`:loop`).
+- **One-Click Disable / Remove**: Safely removes registry values, deletes startup folder links, or disables scheduled tasks with administrative safety fallbacks.
+- **Reveal in File Explorer**: Opens the folder containing the target script/executable in Windows Explorer.
+- **Search Online**: Quickly search Google for unfamiliar processes or commands with one click.
+- **Premium Dark UI**: High-fidelity dark mode with glassmorphic cards, glowing background blobs, dynamic scanning loaders, and a circular system health dashboard gauge.
 
-## 🛠️ Kurulum ve Geliştirme
+## 🛠️ Installation & Development
 
-Projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları izleyin:
+Follow these steps to run the project locally on your machine:
 
-### Gereksinimler
-- **Windows İşletim Sistemi** (Tarama betikleri PowerShell entegrasyonu kullanmaktadır)
-- **Node.js** (v18 veya üzeri sürüm önerilir)
+### Prerequisites
+- **Windows OS** (Scan operations rely on integrated PowerShell hooks)
+- **Node.js** (v18 or higher recommended)
 
-### Adımlar
+### Steps
 
-1. Depoyu klonlayın veya zip dosyasını çıkarın:
+1. Clone the repository:
    ```bash
-   git clone https://github.com/Alttre/startupcmd.git
+   git clone https://github.com/alttrest/startupcmd.git
    cd startupcmd
    ```
 
-2. Gerekli tüm bağımlılıkları yükleyin:
+2. Install the dependencies:
    ```bash
    npm install
    ```
 
-3. Uygulamayı geliştirici modunda çalıştırın:
+3. Launch the application in development mode:
    ```bash
    npm start
    ```
 
-## 📦 Taşınabilir (Portable) EXE Dosyası Üretme
+## 📦 Packaging a Portable Windows Executable (.exe)
 
-Uygulamayı herhangi bir Windows bilgisayarda kuruluma gerek olmadan doğrudan çalıştırılabilecek tek bir **portable .exe** dosyası haline getirmek için:
+You can package the application into a single, standalone **portable .exe** file that requires no installation:
 
 ```bash
 npm run build
 ```
 
-Bu komut çalıştığında:
-- Uygulama kodları sıkıştırılır.
-- Uygulama ikonu (`icon.ico`) otomatik olarak paketlenir.
-- Çıktı olarak tek parça taşınabilir `.exe` dosyası projenin ana dizinindeki **`dist/`** klasörünün içine (`dist/StartupCMD.exe`) kaydedilir.
+This will:
+- Bundle and compress the source code.
+- Package the transparent application icon (`icon.ico`) directly inside the executable.
+- Output the portable binary file to the **`dist/`** folder as `dist/StartupCMD.exe`.
 
 ---
 
-## 🎨 Tasarım ve Arayüz Detayları
+## 🎨 UI Design & System Health
 
-Arayüz, sistem bileşenlerinin durumunu gösteren dairesel bir **Sağlık Göstergesi (Health Score)** ile başlar. Başlangıçta açılan konsol pencereleri veya scriptlerin sayısı arttıkça sağlık puanı düşerek kullanıcının dikkatini çeker.
+The application features a circular **System Health Score** in the left panel. As the count of startup command shell windows increases, the health indicator score lowers, notifying the user to review potential startup optimizations.
 
-- **Kayıt Defteri Simgesi**: Registry girdileri için kalkan simgesi.
-- **Klasör Simgesi**: Başlangıç klasörü öğeleri için klasör görseli.
-- **Terminal Simgesi**: Açılışta açılan tüm siyah CMD ekranları ve scriptleri için terminal simgesi.
+- **Kayıt Defteri (Registry)**: Shield icon for registry entries.
+- **Başlangıç Klasörü (Startup Folder)**: Folder icon for links in the startup folder.
+- **Konsol ve Komutlar (Terminal & Scripts)**: Terminal icon for script and shell command-line launchers.
 
-## ⚖️ Lisans
+## ⚖️ License
 
-Bu proje MIT Lisansı altında lisanslanmıştır. Daha fazla bilgi için `LICENSE` dosyasını inceleyebilirsiniz.
+This project is licensed under the MIT License - see the `LICENSE` file for details.
