@@ -1,0 +1,37 @@
+{
+  "name": "startup-cmd-explainer",
+  "version": "1.0.0",
+  "description": "Windows baslangicinda acilan CMD ve komutlari aciklayan uygulama",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win portable"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^30.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.startupcmd.explainer",
+    "productName": "StartupCMD",
+    "win": {
+      "target": "portable",
+      "icon": "icon.ico"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "index.html",
+      "style.css",
+      "renderer.js",
+      "icon.png",
+      "icon.ico"
+    ],
+    "directories": {
+      "output": "dist"
+    }
+  }
+}

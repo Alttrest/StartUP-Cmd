@@ -1,0 +1,5 @@
+node_modules/
+dist/
+icon_raw.png
+*.log
+.system_generated/

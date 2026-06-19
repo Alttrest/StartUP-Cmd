@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Startup CMD Explainer - Başlangıç Analizi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="icon.png" type="image/png">
+</head>
+<body>
+  <!-- Decorative background glow blobs -->
+  <div class="glow-bg">
+    <div class="blob blob-purple"></div>
+    <div class="blob blob-cyan"></div>
+    <div class="blob blob-orange"></div>
+  </div>
+
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"/>
+          <path d="M12 16V12"/>
+          <path d="M12 8H12.01"/>
+          <path d="M8 12L10 14L16 8" stroke-dasharray="100"/>
+        </svg>
+        <span>StartupCMD</span>
+      </div>
+
+      <div class="system-health">
+        <div class="health-gauge">
+          <svg class="gauge-svg" viewBox="0 0 36 36">
+            <path class="gauge-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+            <path class="gauge-value" id="health-value-path" stroke-dasharray="100, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+          </svg>
+          <div class="health-percent" id="health-score">--</div>
+        </div>
+        <div class="health-status-text" id="health-status">Tarama Yapılıyor...</div>
+      </div>
+
+      <nav class="filters">
+        <button class="nav-item active" data-filter="all">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 6H20M4 12H20M4 18H20" stroke-linecap="round"/>
+          </svg>
+          <span>Tüm Ögeler</span>
+          <span class="count" id="count-all">0</span>
+        </button>
+        
+        <button class="nav-item filter-warn" data-filter="console">
+          <svg class="nav-icon text-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 9V14M12 18H12.01M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Konsol & Komutlar</span>
+          <span class="count badge-orange" id="count-console">0</span>
+        </button>
+
+        <button class="nav-item" data-filter="registry">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 11V17C19 18.6569 15.866 20 12 20C8.13401 20 5 18.6569 5 17V11M19 11C19 12.6569 15.866 14 12 14C8.13401 14 5 12.6569 5 11M19 11C19 9.34315 15.866 8 12 8C8.13401 8 5 9.34315 5 11M19 5.5C19 7.15685 15.866 8.5 12 8.5C8.13401 8.5 5 7.15685 5 5.5C5 3.84315 8.13401 2.5 12 2.5C15.866 2.5 19 3.84315 19 5.5Z" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Kayıt Defteri</span>
+          <span class="count" id="count-registry">0</span>
+        </button>
+
+        <button class="nav-item" data-filter="folder">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Başlangıç Klasörü</span>
+          <span class="count" id="count-folder">0</span>
+        </button>
+
+        <button class="nav-item" data-filter="task">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+          </svg>
+          <span>Zamanlanmış Görevler</span>
+          <span class="count" id="count-task">0</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button id="btn-scan" class="btn-refresh">
+          <svg class="refresh-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 11-.57-8.38l5.67-5.67" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Yeniden Tara</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-panel">
+      <header class="main-header">
+        <div class="search-box">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <input type="text" id="search-input" placeholder="Program, script veya komut adı ara...">
+        </div>
+      </header>
+
+      <!-- Scanning overlay -->
+      <div id="scan-loading" class="loading-container">
+        <div class="spinner"></div>
+        <h3>Başlangıç Öğeleri Taranıyor</h3>
+        <p>Windows başlangıç dosyaları, kayıt defteri girdileri ve zamanlanmış görevler inceleniyor...</p>
+      </div>
+
+      <!-- Main Item List -->
+      <section id="items-list" class="items-list-grid hidden">
+        <!-- Javascript will inject cards here -->
+      </section>
+
+      <!-- Empty State -->
+      <div id="empty-state" class="empty-state hidden">
+        <svg class="empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3>Harika! Hiçbir Öğe Bulunmadı</h3>
+        <p>Arama veya filtre kriterlerinize uyan başlangıç öğesi bulunmuyor.</p>
+      </div>
+    </main>
+
+    <!-- Detail Panel (Overlay drawer on the right) -->
+    <aside id="detail-panel" class="detail-panel closed">
+      <div class="detail-header">
+        <button id="detail-close" class="btn-close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+        <h2 id="detail-title">Öğe Detayları</h2>
+        <span id="detail-badge" class="badge">CMD Girdisi</span>
+      </div>
+
+      <div class="detail-body">
+        <!-- Summary Cards -->
+        <div class="detail-card main-info">
+          <div class="info-row">
+            <span class="info-label">Kaynak Konumu</span>
+            <span id="detail-source-desc" class="info-value">Registry / HKCU Run</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Tetikleyici</span>
+            <span id="detail-trigger-desc" class="info-value">Bilgisayar Açılışında</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Zararlılık Seviyesi</span>
+            <span id="detail-risk-badge" class="risk-badge risk-low">Güvenli</span>
+          </div>
+        </div>
+
+        <!-- Command Line Code Block -->
+        <div class="section-title">Çalıştırılan Komut</div>
+        <div class="command-container">
+          <code id="detail-command-text">C:\Windows\system32\cmd.exe /c start.bat</code>
+        </div>
+
+        <!-- AI/Rule explanation -->
+        <div class="section-title">Açıklama ve Analiz</div>
+        <div class="detail-card explanation-card">
+          <p id="detail-explanation-text">Bu komut, sistem başladığında otomatik olarak arka planda çalıştırılır. Cmd.exe arayüzünü kullanarak belirtilen scripti devreye sokar.</p>
+        </div>
+
+        <!-- Script File content (only visible if the item points to a batch/script file) -->
+        <div id="script-content-section" class="script-content-section hidden">
+          <div class="section-title flex-title">
+            <span>Script İçeriği</span>
+            <span class="file-name-tag" id="script-file-name">script.bat</span>
+          </div>
+          <div class="code-editor-container">
+            <pre><code id="script-code-content" class="language-batch">:: Script kodları buraya yüklenecek</code></pre>
+          </div>
+          <div class="script-analysis-box" id="script-analysis-box">
+            <!-- Programmatic script code warnings -->
+          </div>
+        </div>
+
+        <!-- Action buttons -->
+        <div class="detail-actions">
+          <button id="btn-reveal" class="btn-action btn-secondary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/>
+            </svg>
+            <span>Dosya Konumunu Aç</span>
+          </button>
+          
+          <button id="btn-google" class="btn-action btn-secondary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+            </svg>
+            <span>İnternette Ara</span>
+          </button>
+
+          <button id="btn-disable" class="btn-action btn-danger">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Başlangıçtan Kaldır</span>
+          </button>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
