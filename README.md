@@ -1,5 +1,1 @@
-<p align="center">
-  <a href="https://github.com/Alttrest/StartUP-Cmd">
-    <img src="https://github-readme-svg-ten.vercel.app/api?username=Alttrest&repo=StartUP-Cmd&theme=dark" alt="StartUP-Cmd Stats" />
-  </a>
-</p>
+<div align="center">\n  <a href="https://github.com/Alttrest/StartUP-Cmd">\n    <img src="readme.svg" alt="StartUP-Cmd" width="100%"/>\n  </a>\n</div>\n
