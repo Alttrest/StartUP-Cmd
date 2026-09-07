@@ -1,3 +1,15 @@
+<div align="center">
+  <h1>✨ StartUP-Cmd ✨</h1>
+  <p><i>StartupCMD is a professional, Electron-based desktop application for Windows that scans, explains, and manages command line tools, scripting files, and applications that launch automatically when your system starts up.</i></p>
+
+  <!-- Badges -->
+  <img src="https://img.shields.io/github/languages/top/Alttrest/StartUP-Cmd?style=for-the-badge&color=blue" alt="Top Language" />
+  <img src="https://img.shields.io/github/repo-size/Alttrest/StartUP-Cmd?style=for-the-badge" alt="Repo Size" />
+  <img src="https://img.shields.io/github/last-commit/Alttrest/StartUP-Cmd?style=for-the-badge" alt="Last Commit" />
+</div>
+
+<br />
+
 # StartupCMD - Windows Startup Command Analyzer & Manager
 
 StartupCMD is a professional, Electron-based desktop application for Windows that scans, explains, and manages command line tools, scripting files, and applications that launch automatically when your system starts up.
