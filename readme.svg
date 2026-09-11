@@ -1,13 +1,138 @@
-<svg width="800" height="300" viewBox="0 0 800 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect width="800" height="300" rx="15" fill="#0D1117" stroke="#30363D" stroke-width="2"/>
-    <rect x="0" y="0" width="800" height="60" rx="15" fill="#161B22"/>
-    <text x="50" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#58A6FF">StartUP-Cmd</text>
-    <line x1="0" y1="60" x2="800" y2="60" stroke="#30363D" stroke-width="2"/>
-    <text x="50" y="120" font-family="Arial, sans-serif" font-size="16" fill="#8B949E">StartupCMD is a professional, Electron-based desktop</text>\n<text x="50" y="145" font-family="Arial, sans-serif" font-size="16" fill="#8B949E">application for Windows that scans, explains, and manages</text>\n<text x="50" y="170" font-family="Arial, sans-serif" font-size="16" fill="#8B949E">command line tools, scripting files, and applications that</text>\n
-    <line x1="50" y1="230" x2="750" y2="230" stroke="#30363D" stroke-width="1"/>
-    <circle cx="60" cy="260" r="8" fill="#F1E05A"/>
-    <text x="80" y="265" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#C9D1D9">JavaScript</text>
-    <text x="200" y="265" font-family="Arial, sans-serif" font-size="16" fill="#8B949E">⭐ Stars: 1</text>
-    <text x="320" y="265" font-family="Arial, sans-serif" font-size="16" fill="#8B949E">🍴 Forks: 0</text>
-    <text x="650" y="265" font-family="Arial, sans-serif" font-size="14" fill="#8B949E">by @Alttrest</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050811"/>
+      <stop offset="50%" stop-color="#0b1329"/>
+      <stop offset="100%" stop-color="#030712"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.75" stroke-opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <style>
+    @keyframes pulse {
+      0%, 100% { opacity: 0.8; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.05); }
+    }
+    @keyframes scan {
+      0% { transform: translateY(0); opacity: 0.8; }
+      100% { transform: translateY(180px); opacity: 0; }
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .grid-bg { fill: url(#grid); }
+    .pulse-elem { animation: pulse 2.5s ease-in-out infinite; }
+  </style>
+
+  <rect width="1200" height="560" rx="16" fill="url(#bg)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect width="1200" height="560" rx="16" class="grid-bg" />
+
+  <!-- Top Badge -->
+  <g transform="translate(60, 45)">
+    <rect width="200" height="26" rx="13" fill="#0f172a" stroke="#60a5fa" stroke-width="1"/>
+    <circle cx="15" cy="13" r="4" fill="#60a5fa" />
+    <text x="28" y="17" fill="#60a5fa" font-family="monospace" font-size="11" font-weight="700">WINDOWS SECURITY</text>
+  </g>
+
+  <!-- Left Column: Project Identity & Specs -->
+  <g transform="translate(60, 115)">
+    <text x="0" y="38" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="40" font-weight="800" letter-spacing="-1">StartUP-Cmd</text>
+    <text x="0" y="74" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="15">Desktop Startup Security Audit, Script Inspector &amp; Health Gauge</text>
+
+    <!-- Stack Chips -->
+    <g transform="translate(0, 100)">
+      
+        <rect x="0" y="0" width="96" height="30" rx="6" fill="#0f172a" stroke="#1e293b"/>
+        <text x="48" y="19" text-anchor="middle" fill="#38bdf8" font-family="monospace" font-size="12" font-weight="600">Electron</text>
+        
+        <rect x="108" y="0" width="114" height="30" rx="6" fill="#0f172a" stroke="#1e293b"/>
+        <text x="165" y="19" text-anchor="middle" fill="#a855f7" font-family="monospace" font-size="12" font-weight="600">PowerShell</text>
+        
+        <rect x="234" y="0" width="132" height="30" rx="6" fill="#0f172a" stroke="#1e293b"/>
+        <text x="300" y="19" text-anchor="middle" fill="#10b981" font-family="monospace" font-size="12" font-weight="600">Registry Run</text>
+        
+        <rect x="378" y="0" width="150" height="30" rx="6" fill="#0f172a" stroke="#1e293b"/>
+        <text x="453" y="19" text-anchor="middle" fill="#f59e0b" font-family="monospace" font-size="12" font-weight="600">Task Scheduler</text>
+        
+    </g>
+
+    <!-- Metrics Cards -->
+    <g transform="translate(0, 160)">
+      
+        <g transform="translate(0, 0)">
+          <rect width="145" height="60" rx="8" fill="#0f172a" stroke="#1e293b"/>
+          <text x="14" y="24" fill="#64748b" font-family="monospace" font-size="10">REGISTRY</text>
+          <text x="14" y="48" fill="#60a5fa" font-family="-apple-system, sans-serif" font-size="14" font-weight="700">HKCU/HKLM Run</text>
+        </g>
+        
+        <g transform="translate(155, 0)">
+          <rect width="145" height="60" rx="8" fill="#0f172a" stroke="#1e293b"/>
+          <text x="14" y="24" fill="#64748b" font-family="monospace" font-size="10">TASKS</text>
+          <text x="14" y="48" fill="#a855f7" font-family="-apple-system, sans-serif" font-size="14" font-weight="700">PowerShell Audits</text>
+        </g>
+        
+        <g transform="translate(310, 0)">
+          <rect width="145" height="60" rx="8" fill="#0f172a" stroke="#1e293b"/>
+          <text x="14" y="24" fill="#64748b" font-family="monospace" font-size="10">THREATS</text>
+          <text x="14" y="48" fill="#10b981" font-family="-apple-system, sans-serif" font-size="14" font-weight="700">Zero High-Risk</text>
+        </g>
+        
+    </g>
+
+    <!-- Detailed Highlights -->
+    <g transform="translate(0, 255)">
+      <text x="0" y="0" fill="#60a5fa" font-family="monospace" font-size="11" font-weight="700">CORE SYSTEM ARCHITECTURE:</text>
+      
+        <text x="0" y="22" fill="#cbd5e1" font-family="-apple-system, sans-serif" font-size="12">● Complete scanning of Windows registry startup keys and ta...</text>
+        
+        <text x="0" y="42" fill="#cbd5e1" font-family="-apple-system, sans-serif" font-size="12">● Intelligent risk analysis categorizing performance impact...</text>
+        
+        <text x="0" y="62" fill="#cbd5e1" font-family="-apple-system, sans-serif" font-size="12">● Native PowerShell execution engine providing real-time te...</text>
+        
+    </g>
+  </g>
+
+  <!-- Right Column: Bespoke Visual Representation -->
+  <g transform="translate(680, 50)">
+    
+        <g transform="translate(20, 20)">
+          <!-- Health Gauge -->
+          <rect width="420" height="120" rx="8" fill="#0f172a" stroke="#1e293b"/>
+          <g transform="translate(70, 60)">
+            <circle cx="0" cy="0" r="40" fill="none" stroke="#1f2937" stroke-width="7"/>
+            <circle cx="0" cy="0" r="40" fill="none" stroke="#10b981" stroke-width="7" stroke-dasharray="210" stroke-dashoffset="35"/>
+            <text x="0" y="7" text-anchor="middle" fill="#fff" font-family="monospace" font-size="18" font-weight="800">96%</text>
+          </g>
+          <text x="140" y="48" fill="#f8fafc" font-family="sans-serif" font-size="15" font-weight="700">SYSTEM STARTUP HEALTH</text>
+          <text x="140" y="70" fill="#10b981" font-family="monospace" font-size="11">● 0 High Risk Items Found</text>
+          <text x="140" y="88" fill="#94a3b8" font-family="monospace" font-size="10">Total Startup Delay: 1.4s (Optimal)</text>
+
+          <g transform="translate(0, 135)">
+            <rect width="420" height="155" rx="8" fill="#0b0f19" stroke="#1e293b"/>
+            <text x="15" y="24" fill="#60a5fa" font-family="monospace" font-size="10" font-weight="700">MONITORED STARTUP PROGRAMS</text>
+            <g transform="translate(15, 38)">
+              <text x="0" y="14" fill="#f1f5f9" font-family="sans-serif" font-size="11" font-weight="600">Discord.exe --start-minimized</text>
+              <rect x="290" y="2" width="70" height="16" rx="4" fill="#1e293b"/><text x="325" y="14" text-anchor="middle" fill="#38bdf8" font-family="monospace" font-size="9">NORMAL</text>
+              
+              <text x="0" y="44" fill="#f1f5f9" font-family="sans-serif" font-size="11" font-weight="600">Docker Desktop.exe</text>
+              <rect x="290" y="32" width="70" height="16" rx="4" fill="#1e293b"/><text x="325" y="44" text-anchor="middle" fill="#f59e0b" font-family="monospace" font-size="9">MED-LOAD</text>
+
+              <text x="0" y="74" fill="#f1f5f9" font-family="sans-serif" font-size="11" font-weight="600">WindowsSecurityNotification.exe</text>
+              <rect x="290" y="62" width="70" height="16" rx="4" fill="#1e293b"/><text x="325" y="74" text-anchor="middle" fill="#10b981" font-family="monospace" font-size="9">VERIFIED</text>
+            </g>
+          </g>
+        </g>
+        
+  </g>
+
+  <!-- Bottom Bar -->
+  <g transform="translate(60, 515)">
+    <line x1="0" y1="0" x2="1080" y2="0" stroke="#1e293b" stroke-width="1"/>
+    <text x="0" y="22" fill="#64748b" font-family="monospace" font-size="11">REPOSITORY: Alttrest/StartUP-Cmd</text>
+    <text x="400" y="22" fill="#64748b" font-family="monospace" font-size="11">MAINTAINER: Ali Turan (@Alttrest)</text>
+    <text x="960" y="22" fill="#60a5fa" font-family="monospace" font-size="11">● PRODUCTION VERIFIED</text>
+  </g>
 </svg>
