@@ -1,1 +1,5 @@
-<div align="center">\n  <a href="https://github.com/Alttrest/StartUP-Cmd">\n    <img src="readme.svg" alt="StartUP-Cmd" width="100%"/>\n  </a>\n</div>\n
+<p align="center">
+  <a href="https://github.com/Alttrest/StartUP-Cmd">
+    <img src="readme.svg" width="100%" alt="StartUP-Cmd - Interactive Architecture &amp; Visual Identity" />
+  </a>
+</p>
